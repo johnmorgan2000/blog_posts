@@ -51,12 +51,12 @@ class TestCreateBlogForm(TestCase):
 
         self.assertFalse(is_valid)
 
-    def test_form_is_invalid_with_empty_body(self):
+    def test_form_is_invalid_with_empty_url(self):
         form = CreateBlogForm({
             'title': 'Test Case',
             'author': 'John Morgan',
-            'body': '  ',
-            'cover_image_url': 'Test.com'
+            'body': 'Running a Test',
+            'cover_image_url': '',
         })
 
         is_valid = form.is_valid()
