@@ -1,5 +1,6 @@
 from django.forms import Form
 from django import forms
+from app.validators import validate_not_empty
 
 
 class CreateBlogForm(Form):
@@ -22,7 +23,4 @@ class CreateBlogForm(Form):
         widget=forms.Textarea,
         strip=True,
     )
-    cover_image_url = forms.URLField(
-        label="Cover Image Url",
-        min_length=3,
-    )
+    cover_image_url = forms.URLField(label="Cover Image Url")
