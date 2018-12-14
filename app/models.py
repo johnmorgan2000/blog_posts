@@ -13,6 +13,10 @@ class BlogPost(models.Model):
     def __str__(self):
         return f'{self.title} by {self.author}'
 
+    @staticmethod
+    def get_blogs():
+        return BlogPost.objects.all()
+
 
 class Comment(models.Model):
     title = models.TextField()
