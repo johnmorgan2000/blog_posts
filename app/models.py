@@ -7,7 +7,7 @@ class BlogPost(models.Model):
     title = models.TextField()
     body = models.TextField()
     author = models.TextField()
-    date = models.DateTimeField()
+    date = models.DateField(auto_now_add=True)
     cover_image_url = models.URLField()
 
     def __str__(self):
@@ -18,7 +18,7 @@ class Comment(models.Model):
     title = models.TextField()
     body = models.TextField()
     author = models.TextField()
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
     rating = models.IntegerField()
     blog_id = models.ForeignKey(
         BlogPost,
